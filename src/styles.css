@@ -1,1 +1,185 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* font-family: 'Inter', sans-serif; */
+
+body{
+    background-image: url("https://www.agdelta.com/wp-content/uploads/2018/06/website-parallax-background-C.jpg");
+    font-family: 'Poppins';
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+:root{
+    --primary-color:rgb(46, 99, 205);
+    --primary-font-color: #F6FBF4;
+    --primary-font-color-dim: #f6fbf49b;
+    --backg-color:rgb(14, 44, 103);
+}
+
+@media (max-width: 600px){
+    .nav-btn{
+        display: none;
+    }
+    .headings{
+        display: none;
+    }
+    .container{
+        padding: 0px;
+        margin: 0px;
+        width: 100vw;
+    }
+
+    .container .form-row{
+        width: 95vw;
+    }
+
+    .form-row .loginform{
+        padding-left: 30px;
+        padding-right: 10px;
+    }
+    .loginform .head{
+        margin-left: 12px;
+        padding-bottom: 40px;
+    }
+
+}
+
+.main{
+    backdrop-filter: blur(7px);
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar{
+    padding-inline: 8rem;
+    background-color: rgba(255, 255, 255, 0);
+    padding-block: 1rem;
+    margin-bottom: 5rem;
+}
+.navbar-brand{
+    text-decoration: none;
+    color: var(--primary-font-color);
+    font-size: 1.3rem;
+}
+.navbar-brand:hover{
+    color: var(--primary-font-color);
+}
+
+.nav-btn{
+    color: black;
+    background-color: var(--primary-font-color);
+    border-radius: 20px;
+    font-weight: 600;
+}
+.nav-btn a{
+    text-decoration: none;
+    color: inherit;
+}
+.nav-btn:hover{
+    color:var(--primary-font-color) ;
+    background-color: var(--backg-color);
+}
+
+
+.form-row{
+    background-color: rgba(14, 44, 103, 0.51);
+    height: 70vh;
+    width: 60vw;
+    border-radius: 20px;
+}
+
+/* .home-row{
+
+} */
+
+
+.loginform{
+    padding: 20px 40px;
+}
+
+.loginform{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.head{
+    font-weight: 500;
+    color: var(--primary-font-color);
+}
+
+.form-a{
+    text-decoration: none;
+    color: var(--primary-font-color-dim);
+    font-size: 0.8rem;
+}
+.form-a:hover{
+    color: var(--primary-font-color);
+}
+
+.signup-btn{
+    color: var(--primary-font-color);
+    background-color: black;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.btn:focus{
+    box-shadow: 0 0 0 0.25rem rgba(13, 109, 253, 0)
+}
+.signup-btn:hover{
+    color: black;
+    background-color: var(--primary-font-color);
+}
+
+.headings{
+    color: var(--primary-font-color);
+    margin-bottom: 7rem;
+}
+.headings span{
+    font-weight: 100;
+}
+.headings h5{
+    font-weight: 200;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.form-control{
+    color: var(--primary-font-color);
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
+    border-radius: 0px;
+    padding-top: 2.5rem;
+}
+
+.form-control:focus{
+    color: var(--primary-font-color);
+    background-color: rgba(0, 255, 255, 0);
+    outline: none !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0);
+    border-width: 0px 0px 2px 0px;
+    border-bottom: solid beige 2px;
+}
+
+.form-floating>.form-control:not(:placeholder-shown){
+    padding-top: 2.5rem;
+}
+
+.form-floating>.form-control:focus{
+    padding-top: 2.5rem;
+}
+
+.form-floating label{
+    color: var(--primary-font-color);
+}
+
+/* home */
+.home-row h1{
+    color: var(--primary-font-color);
+    font-size: 3rem;
+}
+.home-heading span{
+    color: var(--primary-font-color);
+    font-weight: 100;
+}

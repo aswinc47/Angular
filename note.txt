@@ -1,0 +1,18 @@
+Data Binding techniques in Angular (data sharing in component)
+-----------------------------------------------------------------
+
+html - view
+ts - component
+
+
+1. One Way binding
+-----------------------
+
+1.1 - component to view data sharing
+
+    1.1.1 string interpolation {{}}
+    1.1.2 property binding      [property] = ""
+
+1.2 - view to component data sharing
+
+    1.2.1 event binding         (event) = 'function()'

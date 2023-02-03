@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormcolrowComponent } from './formcolrow/formcolrow.component';
 import { LoginformComponent } from './loginform/loginform.component';
-import { RightcolComponent } from './rightcol/rightcol.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { RightcolComponent } from './rightcol/rightcol.component';
     NavbarComponent,
     FormcolrowComponent,
     LoginformComponent,
-    RightcolComponent
+    RegisterComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

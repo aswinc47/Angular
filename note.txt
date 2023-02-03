@@ -11,8 +11,47 @@ ts - component
 1.1 - component to view data sharing
 
     1.1.1 string interpolation {{}}
-    1.1.2 property binding      [property] = ""
+    1.1.2 property binding      [property] = "data"
 
 1.2 - view to component data sharing
 
     1.2.1 event binding         (event) = 'function()'
+    1.2.2 event binding using $event    (event) = method($event)
+    1.2.3 event binding with template rendering variable #variable
+    
+2. Two way binding
+-----------------------
+
+    2.1 ngModel     [(ngModel)] = "property" FormsModule
+    
+
+
+Redirection in angular
+--------------------------
+
+Module - AppRoutingModule |
+Router - a class used to redirect |
+methods - navigateByUrl |
+
+Dependency Injection [like inheritence]
+-------------------------------------------
+
+To share datas from one class to another class
+
+Inside constructor
+
+    access_specifier referenceVariable:ClassName
+    private/public 
+
+    reference.method()
+
+Angular Services
+---------------------
+
+    to store redentent datas and methods 
+    - all components can access the datas and methods defined in
+    service file easily
+
+        - ng g s service_name
+    
+

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../data.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-loginform',
@@ -7,32 +10,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginformComponent implements OnInit{
 
-  userDetails: any = {
-    1000:{acno:100,username:"anu",password:"abc@12",balance:0},
-    1001:{acno:101,username:"amal",password:"abc@12",balance:0},
-    1002:{acno:102,username:"ajith",password:"abc@12",balance:0},
-    1003:{acno:103,username:"akash",password:"abc@12",balance:0},
-  }
   acnum: any;
   pass: any;
 
-  constructor(){ }
+  constructor(private router:Router, private ds:DataService){ }
 
   ngOnInit(): void {
       
   }
 
+
   login(){
-    console.log("working")
-  }
-  eventInput(event:any){
-    this.acnum = event.target.value
-    console.log(this.acnum);
+   let pass = this.pass
+   let acnum = this.acnum
+   ;
+   const loginResult = this.ds.login(acnum,pass)
+
+   if(loginResult){
+    this.router.navigateByUrl("dashboard")
+   }else{
+    alert("Incorrect account number or password")
+   }
+   
   }
 
-  eventPassword(event:any){
-    this.pass = event.target.value
-    console.log(this.pass)
-  }
+
+// login(a:any,b:any){
+//   let acnum = a.value
+//   let pass = b.value
+//   let userDetails = this.userDetails
+//   ;
+  
+//   if(acnum in userDetails){
+//    if(pass == userDetails[acnum].password){
+//      console.log(userDetails[acnum].password)
+//      alert("Login successful")
+//    }else{
+//      alert("Incorrect password")
+//    }
+//   }else{
+//    alert("Account doesnt exist")
+//   }
+//  }
 }
-

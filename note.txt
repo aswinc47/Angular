@@ -53,5 +53,11 @@ Angular Services
     service file easily
 
         - ng g s service_name
-    
+
+Angular Directives - to manipulate DOM
+------------------------------------------
+
+1. Component Directives
+2. Structural Directives        *ngFor
+
 

@@ -183,3 +183,8 @@ body{
     color: var(--primary-font-color);
     font-weight: 100;
 }
+
+.transaction-sub{
+    font-weight: 300;
+    font-size: 1.1rem;
+}

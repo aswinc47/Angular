@@ -1,0 +1,10 @@
+<div class="row form-row align-items-start justify-content-between px-4 py-4">
+    <div class="transaction-type w-50 text-center">
+        <h4 class="head mb-3">Transaction type</h4>
+        <h5 class="transaction-sub head mt-4" *ngFor="let i of transactionData">{{i.Type}}</h5>
+    </div>
+    <div class="tansaction-amount w-50 text-center">
+        <h4 class="head mb-3">Amount</h4>
+        <h5 class="transaction-sub head mt-4" *ngFor="let i of transactionData">{{i.amount}}</h5>
+    </div>
+</div>

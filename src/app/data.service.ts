@@ -10,10 +10,10 @@ export class DataService {
   constructor() { }
 
   userDetails: any = {
-    1000:{acno:1000,username:"anu",password:"abc@12",balance:0,transaction:[]},
-    1001:{acno:1001,username:"amal",password:"abc@12",balance:0,transaction:[]},
-    1002:{acno:1002,username:"ajith",password:"abc@12",balance:0,transaction:[]},
-    1003:{acno:1003,username:"akash",password:"abc@12",balance:0,transaction:[]},
+    1000:{acno:1000,username:"anu",password:"abc12",balance:0,transaction:[]},
+    1001:{acno:1001,username:"amal",password:"abc12",balance:0,transaction:[]},
+    1002:{acno:1002,username:"ajith",password:"abc12",balance:0,transaction:[]},
+    1003:{acno:1003,username:"akash",password:"abc12",balance:0,transaction:[]},
   }
 
   currentUser:any
@@ -75,7 +75,7 @@ export class DataService {
           userDetails[acnum]["transaction"].push({Type:"Debit",amount:amnt})
 
           console.log(userDetails)
-          
+
           return userDetails[acnum]["balance"]
         }else{
           alert('Insufficient Balance')

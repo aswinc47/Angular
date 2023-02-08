@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-loginform',
@@ -10,26 +10,32 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginformComponent implements OnInit{
 
-  acnum: any;
-  pass: any;
-
-  constructor(private router:Router, private ds:DataService){ }
+  constructor(private router:Router, private ds:DataService, private fb:FormBuilder ){ }
 
   ngOnInit(): void {
       
   }
 
 
-  login(){
-   let pass = this.pass
-   let acnum = this.acnum
-   ;
-   const loginResult = this.ds.login(acnum,pass)
+  loginForm = this.fb.group({
+    acnum:['',[Validators.required,Validators.pattern('[0-9]+')]],
+    pass:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]+')]]
+  })
 
-   if(loginResult){
-    this.router.navigateByUrl("dashboard")
+  login(){
+   let pass = this.loginForm.value.pass
+   let acnum = this.loginForm.value.acnum
+
+   if(this.loginForm.valid){
+      const loginResult = this.ds.login(acnum,pass)
+
+      if(loginResult){
+      this.router.navigateByUrl("dashboard")
+      }else{
+      alert("Incorrect account number or password")
+   }
    }else{
-    alert("Incorrect account number or password")
+    alert("Validation error")
    }
    
   }

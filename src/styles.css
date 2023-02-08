@@ -188,3 +188,9 @@ body{
     font-weight: 300;
     font-size: 1.1rem;
 }
+.inv{
+    font-size: 0.8rem;
+    color: red;
+    font-weight: 600;
+    text-align: end;
+}

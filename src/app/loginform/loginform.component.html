@@ -1,15 +1,17 @@
 
 <div class="row form-row align-items-center">
     <div class="col-md-6 col-sm-12 loginform">
-        <form (ngSubmit)="login()">
+        <form (ngSubmit)="login()" [formGroup]="loginForm">
                 <h2 class="head mb-3">LOG IN</h2>
                 <div class="form-floating mb-3">
-                    <input [(ngModel)]="acnum" type="text" name="accountnum" class="form-control" id="acno"  placeholder="name@example.com">
+                    <input formControlName="acnum" type="text" name="accountnum" class="form-control" id="acno"  placeholder="name@example.com">
                     <label for="acno">Account Number</label>
+                    <div class="inv" *ngIf="this.loginForm.get('acnum')?.errors && this.loginForm.get('acnum')?.touched">invalid:numbers only</div>
                 </div>
                 <div class="form-floating mb-5">
-                    <input [(ngModel)]="pass" type="password" name="pswd" class="form-control" id="password"  placeholder="Password">
+                    <input formControlName="pass" type="password" name="pswd" class="form-control" id="password"  placeholder="Password">
                     <label for="password">Password</label>
+                    <div class="inv" *ngIf="this.loginForm.get('pass')?.errors && this.loginForm.get('pass')?.touched">invalid:can't use special characters</div>
                 </div>
                 <div class="d-flex align-items-center justify-content-between px-3">
                     <a routerLink="register" class="form-a">Create an account</a>

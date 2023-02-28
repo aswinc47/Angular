@@ -46,7 +46,6 @@ body{
 
 .main{
     backdrop-filter: blur(7px);
-    width: 100vw;
     height: 100vh;
 }
 
@@ -54,7 +53,7 @@ body{
     padding-inline: 8rem;
     background-color: rgba(255, 255, 255, 0);
     padding-block: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 .navbar-brand{
     text-decoration: none;
@@ -83,7 +82,7 @@ body{
 
 .form-row{
     background-color: rgba(14, 44, 103, 0.51);
-    height: 70vh;
+    height:60vh;
     width: 60vw;
     border-radius: 20px;
 }
@@ -193,4 +192,24 @@ body{
     color: red;
     font-weight: 600;
     text-align: end;
+}
+
+.deleteconfirm{
+    background-color: rgba(14, 44, 103, 0.501);
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: 10rem;
+}
+
+.invisible{
+    display: none;
+}
+
+.deletecinner{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }

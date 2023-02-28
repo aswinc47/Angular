@@ -37,7 +37,6 @@ export class LoginformComponent implements OnInit{
    }else{
     alert("Validation error")
    }
-   
   }
 
 

@@ -1,3 +1,36 @@
+Angular
+
+create project 
+    -- ng new projectname
+
+clear warning or error 
+    -- npm i --force
+
+project run 
+    -- ng serve or ng serve --open
+
+FILES AND FOLDERS :
+
+.angular - configure angular app with angular cli
+.vscode - configure vscode and angular
+nodemodules - copy of third party packages and modules
+src - BELOW
+.editorconfig - vscode configurations
+.gitignore - files to be ignored when pushing to git
+angular.json - basic angular details
+karma.conf.js - for testers
+package.json - versions of dependencies
+README.md - details
+tsconfig.app.json - typescript configurations
+
+lifecycle
+--------------
+
+constructor --> ngOnInit ---> other methods
+
+
+src - app - datas
+
 Data Binding techniques in Angular (data sharing in component)
 -----------------------------------------------------------------
 
@@ -41,14 +74,14 @@ To share datas from one class to another class
 Inside constructor
 
     access_specifier referenceVariable:ClassName
-    private/public 
+    private/public
 
     reference.method()
 
 Angular Services
 ---------------------
 
-    to store redentent datas and methods 
+    to store redentent datas and methods
     - all components can access the datas and methods defined in
     service file easily
 
@@ -58,8 +91,8 @@ Angular Directives - to manipulate DOM
 ------------------------------------------
 
 1. Component Directives
-2. Structural Directives        *ngFor
-
+2. Structural Directives        *ngFor *ngIf
+3. attribute Directives         [ngClass]
 
 Validation in Angular
 ----------------------
@@ -69,10 +102,35 @@ form creation in angular
     1. Template driven form
     2. Model driven form
         2.1. reactive form - used to create model of form
-            -contains group, array, control
+            - contains group, array, control
             
             - ReactiveFormsModule - module
             - FormBuilder         - class used to create model form
             - group()             - method used to create model form
 
 
+Local Storage In Angular
+------------------------
+
+localStorage.getItem()
+localStorage.setItem()
+localStorage.removeItem()
+
+
+json - stringify
+
+Parent- Child communication
+-----------------------------
+
+@Input() decorator - Parent to Child
+@Output() decorator - Child to parent
+
+
+Event creation in Angular
+-----------------------------
+
+we can create our own events in angular
+        EventEmitter - class used to create userdefined events
+
+            eventname = new EventEmitter()
+            emit()  -  to define the working time / to start the event

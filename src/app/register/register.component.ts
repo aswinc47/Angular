@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 
 @Component({
@@ -17,10 +17,11 @@ export class RegisterComponent implements OnInit{
   }
 
   // create reactive form of register form
+  
   registerForm = this.fb.group({
     uname:['',[Validators.required,Validators.pattern('[A-Za-z]+')]],
     acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
-    pass:['',[Validators.required,Validators.pattern('[A-Ba-b0-9]+')]]
+    pass:['',[Validators.required,Validators.pattern('[A-Za-z0-9]+')]]
   })
 
 

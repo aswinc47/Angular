@@ -1,0 +1,9 @@
+<div *ngIf="item" class="row deleteconfirm align-items-center mb-3">
+    <div class="deletecinner">
+        <h5 class="head mb-3">Do you want to delete your account ({{item}}) </h5>
+        <div class="d-flex deleteacdiv">
+            <button type="button" class="btn nav-btn px-4 py-2 me-3">Yes</button>
+            <button type="button" (click)="oncancel()"  class="btn nav-btn px-4 py-2">No</button>
+        </div>
+    </div>
+</div>

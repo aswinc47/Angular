@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 
 @Component({
@@ -9,17 +10,33 @@ import { DataService } from '../data.service';
 })
 export class DashboardComponent implements OnInit {
 
+  currentUser = this.ds.currentUser
+
   acnum1:any
   pass1:any
   deposit1:any
   acnum2:any
   pass2:any
   withdraw1:any
+  acno:any
 
-  constructor(private ds:DataService, private fb:FormBuilder ){
+  accessdate:any
+
+  constructor(private ds:DataService, private fb:FormBuilder, private router:Router ){
+    this.accessdate = new Date()
+    console.log(typeof(this.accessdate))
   }
   ngOnInit(): void {
-    
+    if(!localStorage.getItem("currentAcno")){
+      alert('Please login')
+      this.router.navigateByUrl("")
+    }
+  }
+
+  dateEdit(date:string){
+    const newDate = date.split(" ").length = 1
+    console.log(newDate)
+    return newDate
   }
 
   depositForm = this.fb.group({
@@ -50,6 +67,19 @@ export class DashboardComponent implements OnInit {
       alert('Invalid input')
     }
 
+  }
+  
+  deleteParent(){
+    this.acno = JSON.parse(localStorage.getItem("currentAcno") || '')
+  }
+  
+  logout(){
+    this.ds.removeData()
+    this.router.navigateByUrl("/")
+  }
+  
+  cancel(){
+    this.acno = ''
   }
 
   withdraw(){
